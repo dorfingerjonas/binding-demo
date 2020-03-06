@@ -20,6 +20,9 @@ public class OneWayBindingController implements Initializable {
     @FXML
     Label label;
 
+    @FXML
+    Button nextButton;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         label.setText("");
