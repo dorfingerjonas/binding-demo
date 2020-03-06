@@ -24,9 +24,13 @@ public class OneWayBindingController implements Initializable {
     @FXML
     Button nextButton;
 
+    @FXML
+    Button previousButton;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         label.setText("");
+        previousButton.setDisable(true);
 
         showButton.disableProperty().bind(textArea.textProperty().isEmpty());
 
