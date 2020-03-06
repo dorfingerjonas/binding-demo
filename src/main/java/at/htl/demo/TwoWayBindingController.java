@@ -2,8 +2,6 @@ package at.htl.demo;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import java.net.URL;
@@ -19,6 +17,8 @@ public class TwoWayBindingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+    secondTextArea.setText("");
 
+    secondTextArea.textProperty().bindBidirectional(textArea.textProperty());
     }
 }
