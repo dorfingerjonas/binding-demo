@@ -11,7 +11,7 @@
     <bottom>
         <AnchorPane prefHeight="21.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" text="Previous" />
+                <Button fx:id="previousButton" mnemonicParsing="false" text="Previous" />
                 <Button layoutX="538.0" mnemonicParsing="false" text="Next" />
             </children>
         </AnchorPane>
