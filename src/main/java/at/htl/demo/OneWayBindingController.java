@@ -24,6 +24,8 @@ public class OneWayBindingController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         label.setText("");
 
+        showButton.disableProperty().bind(textArea.textProperty().isEmpty());
+
         showButton.setOnAction(actionEvent -> {
             label.setText(textArea.getText());
         });
