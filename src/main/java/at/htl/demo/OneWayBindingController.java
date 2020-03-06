@@ -26,6 +26,8 @@ public class OneWayBindingController implements Initializable {
 
         showButton.disableProperty().bind(textArea.textProperty().isEmpty());
 
+        label.textProperty().bind(textArea.textProperty());
+
         showButton.setOnAction(actionEvent -> {
             label.setText(textArea.getText());
         });
