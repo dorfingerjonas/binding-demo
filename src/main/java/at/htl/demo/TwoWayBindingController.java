@@ -26,13 +26,20 @@ public class TwoWayBindingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         secondTextArea.setText("");
-        nextButton.setDisable(true);
 
         secondTextArea.textProperty().bindBidirectional(textArea.textProperty());
 
         previousButton.setOnAction(actionEvent -> {
             try {
                 App.setRoot("OneWayBinding");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        nextButton.setOnAction(actionEvent -> {
+            try {
+                App.setRoot("slider");
             } catch (IOException e) {
                 e.printStackTrace();
             }
