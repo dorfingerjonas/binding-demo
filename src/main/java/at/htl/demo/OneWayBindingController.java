@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -33,6 +34,14 @@ public class OneWayBindingController implements Initializable {
 
         showButton.setOnAction(actionEvent -> {
             label.setText(textArea.getText());
+        });
+
+        nextButton.setOnAction(actionEvent -> {
+            try {
+                App.setRoot("TwoWayBinding");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 }
