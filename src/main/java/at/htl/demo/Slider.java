@@ -9,6 +9,8 @@ import javafx.util.converter.NumberStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Slider implements Initializable {
@@ -25,6 +27,8 @@ public class Slider implements Initializable {
     @FXML
     javafx.scene.control.Slider horizontalSlider;
 
+    List<String> allowedValues = Arrays.asList("", "1", "2", "3", "4", "5");
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         nextButton.setDisable(true);
@@ -36,6 +40,12 @@ public class Slider implements Initializable {
                 App.setRoot("TwoWayBinding");
             } catch (IOException e) {
                 e.printStackTrace();
+            }
+        });
+
+        textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (!allowedValues.contains(newValue)) {
+                textField.setText(oldValue);
             }
         });
     }
