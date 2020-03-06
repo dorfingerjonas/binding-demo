@@ -20,9 +20,13 @@ public class TwoWayBindingController implements Initializable {
     @FXML
     Button previousButton;
 
+    @FXML
+    Button nextButton;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         secondTextArea.setText("");
+        nextButton.setDisable(true);
 
         secondTextArea.textProperty().bindBidirectional(textArea.textProperty());
 
