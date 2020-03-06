@@ -15,13 +15,10 @@ public class TwoWayBindingController implements Initializable {
     TextArea textArea;
 
     @FXML
-    Button showButton;
-
-    @FXML
     TextArea secondTextArea;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showButton.disableProperty().bind(textArea.textProperty().isEmpty());
+
     }
 }
